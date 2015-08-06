@@ -1,3 +1,4 @@
+#/usr/bin/python3.4
 from urllib import request
 import gettorrents
 import streamtorrent
@@ -15,6 +16,7 @@ def get(data):
 	note: fix to get tiles(formated and nonformated) from any url of cpasbien.cw
 	"""
 	global linkholder
+	global magnet
 	global niceTitles
 	global unformatedtitle
 	if data == "http://www.cpasbien.pw/":
@@ -28,6 +30,14 @@ def get(data):
 			niceTitles.append(nice)
 		for i in range(len(niceTitles)):
 			print(i, " = " + unformatedtitle[i])
+		print("What do you wish to do now?")
+		print("1: Stream the torrent from list above\n2: Quit")
+		userinput = int(input("Enter here: "))
+		if userinput == 1:
+			print("Enter the index number of movie")
+			userinput = int(input())
+			lhol = (gettorrents.get(userinput,niceTitles,magnet))
+			streamtorrent.stream(lhol)
 	elif data == "http://www.cpasbien.pw/view_cat.php?categorie=films":
 		def movies(url2):
 			req_url = request.urlopen(data).read()
@@ -39,7 +49,15 @@ def get(data):
 				niceTitles.append(nice)
 		movies(data)	
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])	
+			print(i, " = " + unformatedtitle[i])
+		print("What do you wish to do now?")
+		print("1: Stream the torrent from list above\n2: Quit")
+		userinput = int(input("Enter here: "))
+		if userinput == 1:
+			print("Enter the index number of movie")
+			userinput = int(input())
+			lhol = (gettorrents.get(userinput,niceTitles,magnet))
+			streamtorrent.stream(lhol)	
 	elif data == "http://www.cpasbien.pw/view_cat.php?categorie=series":
 		def series(url2):
 			global niceTitles, magnet
