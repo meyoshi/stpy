@@ -12,6 +12,7 @@ niceTitles = []
 linkholder = "" 
 magnet = [] 
 unformatedtitle = []
+def get(data):
 	global linkholder
 	global magnet
 	global niceTitles
