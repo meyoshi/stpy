@@ -8,14 +8,10 @@ try:
 except :
 	print("Please install beautifulsoup before running this program")
 
-niceTitles = [] #contain the formated titles ready to make torrent download link for each movies or tv shows
-linkholder = "" #this will be used to stream a specific link 
-magnet = [] #this contain the list of magnet links
-unformatedtitle = [] #contain the list of unformated title
-def get(data):
-	"""
-	note: fix to get tiles(formated and nonformated) from any url of cpasbien.cw
-	"""
+niceTitles = [] 
+linkholder = "" 
+magnet = [] 
+unformatedtitle = []
 	global linkholder
 	global magnet
 	global niceTitles
