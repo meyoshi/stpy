@@ -1,4 +1,5 @@
 #/usr/bin/python3.4
+# -*- coding: utf-8 -*-
 import gettitles
 def secMenu():
 	print("1 = Movies\tor\t 2 = Tv seris")

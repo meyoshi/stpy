@@ -1,4 +1,5 @@
 #/usr/bin/python3.4
+# -*- coding: utf-8 -*-
 from urllib import request
 import gettorrents
 import streamtorrent
@@ -29,7 +30,7 @@ def get(data):
 			nice = ni.get_text().replace(" ","-").replace(":","\b-\b").replace("’","-").replace("(","").replace(")","").replace("&","\b-\b").replace("'","-").lower()
 			niceTitles.append(nice)
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + niceTitles[i])
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -49,7 +50,7 @@ def get(data):
 				niceTitles.append(nice)
 		movies(data)	
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + niceTitles[i])
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -70,7 +71,7 @@ def get(data):
 				niceTitles.append(nice)
 		series(data)
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + niceTitles[i])
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
