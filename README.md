@@ -13,4 +13,6 @@ For this to work you need the following:
 
     5 vlc media player(http://www.videolan.org/vlc/index.html)
 
-After you are done watching please delete the files on C:\Users\yourusername\AppData\Local\Temp\torrent-stream if you are on microsoft windows.If you are on linux run clean.py
+After you are done watching please delete the files on C:\Users\yourusername\AppData\Local\Temp\torrent-stream if you are on microsoft windows.
+
+If you are on linux run clean.py
