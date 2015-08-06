@@ -11,3 +11,5 @@ For this to work you need the following:
 
     4 beautifulsoup4(install this with command "pip3 install beautifulsoup4")
 
+    5 vlc media player(http://www.videolan.org/vlc/index.html)
+

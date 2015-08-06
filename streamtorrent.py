@@ -3,4 +3,4 @@
 """"""
 import os
 def stream(data):
-	os.system("peerflix {} --vlc".format(data))
+	os.system("peerflix {} --vlc --remove".format(data))
