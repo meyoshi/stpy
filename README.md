@@ -1,5 +1,5 @@
 #stpy
-Get torrent links using python and stream it to vlc using nodejs peerflix
+streamtorrentpython gets torrent links  form http://www.cpasbien.pw/ using python and stream it to vlc using nodejs peerflix
 #Dependencies
 For this to work you need the following:
     
