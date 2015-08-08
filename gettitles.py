@@ -1,4 +1,5 @@
 #/usr/bin/python3.4
+# -*- coding: utf-8 -*-
 from urllib import request
 import gettorrents
 import streamtorrent
@@ -7,14 +8,11 @@ try:
 except :
 	print("Please install beautifulsoup before running this program")
 
-niceTitles = [] #contain the formated titles ready to make torrent download link for each movies or tv shows
-linkholder = "" #this will be used to stream a specific link 
-magnet = [] #this contain the list of magnet links
-unformatedtitle = [] #contain the list of unformated title
+niceTitles = [] 
+linkholder = "" 
+magnet = [] 
+unformatedtitle = []
 def get(data):
-	"""
-	note: fix to get tiles(formated and nonformated) from any url of cpasbien.cw
-	"""
 	global linkholder
 	global magnet
 	global niceTitles
@@ -50,8 +48,12 @@ def get(data):
 		size = get_size(data)
 		print("#"*50)
 		for i in range(len(niceTitles)):
+<<<<<<< HEAD
 			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
 		print("#"*50)
+=======
+			print(i, " = " + niceTitles[i])
+>>>>>>> c59690854b22913c0badf8e59f61045033ca2714
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -72,7 +74,11 @@ def get(data):
 		size = get_size(data)
 		movies(data)	
 		for i in range(len(niceTitles)):
+<<<<<<< HEAD
 			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
+=======
+			print(i, " = " + niceTitles[i])
+>>>>>>> c59690854b22913c0badf8e59f61045033ca2714
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -94,7 +100,11 @@ def get(data):
 		size = get_size(data)
 		series(data)
 		for i in range(len(niceTitles)):
+<<<<<<< HEAD
 			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
+=======
+			print(i, " = " + niceTitles[i])
+>>>>>>> c59690854b22913c0badf8e59f61045033ca2714
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
