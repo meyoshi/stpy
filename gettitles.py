@@ -19,6 +19,25 @@ def get(data):
 	global magnet
 	global niceTitles
 	global unformatedtitle
+	def get_size(url):
+		if url == "http://www.cpasbien.pw":
+			req = request.urlopen(url).read()
+			soup = BeautifulSoup(req)
+			gsize = soup.find_all("div",{"class":"poid"})
+			gsize = gsize[0:40]
+			size = []
+			for i in range(len(gsize)):
+				size.append(gsize[i])
+			return size
+		else:
+			req = request.urlopen(url).read()
+			soup = BeautifulSoup(req)
+			gsize = soup.find_all("div",{"class":"poid"})
+			size = []
+			for i in range(len(gsize)):
+				size.append(gsize[i])
+			return size
+		
 	if data == "http://www.cpasbien.pw/":
 		req_url = request.urlopen(data).read()
 		soup = BeautifulSoup(req_url)
@@ -28,8 +47,11 @@ def get(data):
 			unformatedtitle.append(ni.get_text())
 			nice = ni.get_text().replace(" ","-").replace(":","\b-\b").replace("’","-").replace("(","").replace(")","").replace("&","\b-\b").replace("'","-").lower()
 			niceTitles.append(nice)
+		size = get_size(data)
+		print("#"*50)
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
+		print("#"*50)
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -47,9 +69,10 @@ def get(data):
 				unformatedtitle.append(ni.get_text())
 				nice = ni.get_text().replace(" ","-").replace(":","\b-\b").replace("’","-").replace("(","").replace(")","").replace("&","\b-\b").replace("'","-").lower()
 				niceTitles.append(nice)
+		size = get_size(data)
 		movies(data)	
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
@@ -68,9 +91,10 @@ def get(data):
 				unformatedtitle.append(ni.get_text())
 				nice = ni.get_text().replace(" ","-").replace(":","\b-\b").replace("’","-").replace("(","").replace(")","").replace("&","\b-\b").replace("'","-").lower()
 				niceTitles.append(nice)
+		size = get_size(data)
 		series(data)
 		for i in range(len(niceTitles)):
-			print(i, " = " + unformatedtitle[i])
+			print(i, " = " + unformatedtitle[i] +" size = "+ str(size[i])[18:-7])
 		print("What do you wish to do now?")
 		print("1: Stream the torrent from list above\n2: Quit")
 		userinput = int(input("Enter here: "))
